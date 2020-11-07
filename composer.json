@@ -1,0 +1,19 @@
+{
+    "name": "hexlet/code",
+    "description": "first hexlet project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Konstantin.P",
+            "email": "kosta0683@mail.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "files": [
+            "bin/brain-games.php"
+        ]
+    },
+    "require": {}
+}
