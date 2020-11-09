@@ -10,9 +10,11 @@
         }
     ],
     "minimum-stability": "stable",
+    "bin": [
+        "bin/brain-games"
+    ],
     "autoload": {
         "files": [
-            "bin/brain-games.php"
         ]
     },
     "require": {}
