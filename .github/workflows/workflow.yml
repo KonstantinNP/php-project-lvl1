@@ -1,0 +1,21 @@
+# Name of workflow
+name: Run lint
+
+# Trigger the workflow on push or pull request
+on:
+  - push
+
+jobs:
+  build:
+
+    # The type of machine to run the job on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check-out repository under GitHub workspace
+      # https://github.com/actions/checkout
+      - uses: actions/checkout@v2
+        # Step's name
+      - name: Run linter
+        # Run Linter
+        run: make lint
