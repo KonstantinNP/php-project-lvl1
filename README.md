@@ -6,3 +6,7 @@
 
 ### Github Action
 ![workflow action](https://github.com/KonstantinNP/php-project-lvl1/workflows/Run%20lint/badge.svg)
+
+### Asciinema recording
+[![asciicast](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa.svg)](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa)
+
