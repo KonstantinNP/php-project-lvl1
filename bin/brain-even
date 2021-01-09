@@ -4,6 +4,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Php\Project\Lvl1\Cli;
+use Php\Project\Lvl1\Even;
 
-Cli\cli();
+Even\checkEven();
