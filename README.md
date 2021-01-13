@@ -12,3 +12,5 @@ Install project and Even-Game
 [![asciicast](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa.svg)](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa)
 Calc-Game
 [![asciicast](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy.svg)](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy)
+Gcd-Game
+[![asciicast](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG.svg)](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG)

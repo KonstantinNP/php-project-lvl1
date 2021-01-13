@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Php\Project\Lvl1\Games\Even\evenGame;
 use function Php\Project\Lvl1\Games\Calc\calcGame;
+use function Php\Project\Lvl1\Games\Gcd\gcdGame;
 
 function engineForGames($game)
 {
@@ -21,6 +22,10 @@ function engineForGames($game)
         case "calc":
             $maxNumber = 10;
             calcGame($name, $questionsCount, $maxNumber);
+            break;
+        case "gcd":
+            $maxNumber = 100;
+            gcdGame($name, $questionsCount, $maxNumber);
             break;
     }
 }

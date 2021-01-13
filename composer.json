@@ -13,7 +13,8 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "scripts": {
         "phpcs": "phpcs"
@@ -24,6 +25,7 @@
             "src/Even.php",
             "src/Games/Even.php",
             "src/Games/Calc.php",
+            "src/Games/Gcd.php",
             "src/Engine.php"
         ]
     },
