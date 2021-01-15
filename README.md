@@ -8,9 +8,15 @@
 ![workflow action](https://github.com/KonstantinNP/php-project-lvl1/workflows/Run%20lint/badge.svg)
 
 ### Asciinema recordings
-Install project and Even-Game
+
+####Install project and Even-Game
 [![asciicast](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa.svg)](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa)
-Calc-Game
+
+####Calc-Game
 [![asciicast](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy.svg)](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy)
-Gcd-Game
+
+####Gcd-Game
 [![asciicast](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG.svg)](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG)
+
+####Progression-Game
+[![asciicast](https://asciinema.org/a/dtD4eVD3r3tjwpiofBaQyGTxd.svg)](https://asciinema.org/a/dtD4eVD3r3tjwpiofBaQyGTxd)

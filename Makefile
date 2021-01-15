@@ -16,5 +16,8 @@ brain-calc:
 brain-gcd:
 	./bin/brain-gcd
 
+brain-progression:
+	./bin/brain-progression
+
 lint:
 	composer run-script phpcs -- --standard=PSR12 src bin
