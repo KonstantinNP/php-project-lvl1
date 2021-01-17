@@ -9,14 +9,17 @@
 
 ### Asciinema recordings
 
-####Install project and Even-Game
+Install project and Even-Game
 [![asciicast](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa.svg)](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa)
 
-####Calc-Game
+Calc-Game
 [![asciicast](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy.svg)](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy)
 
-####Gcd-Game
+Gcd-Game
 [![asciicast](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG.svg)](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG)
 
-####Progression-Game
+Progression-Game
 [![asciicast](https://asciinema.org/a/dtD4eVD3r3tjwpiofBaQyGTxd.svg)](https://asciinema.org/a/dtD4eVD3r3tjwpiofBaQyGTxd)
+
+Prime-Game
+[![asciicast](https://asciinema.org/a/NHkIcB2wnihHR0kXjA5YvSPLK.svg)](https://asciinema.org/a/NHkIcB2wnihHR0kXjA5YvSPLK)

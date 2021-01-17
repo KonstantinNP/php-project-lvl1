@@ -8,6 +8,7 @@ use function Php\Project\Lvl1\Games\Even\evenGame;
 use function Php\Project\Lvl1\Games\Calc\calcGame;
 use function Php\Project\Lvl1\Games\Gcd\gcdGame;
 use function Php\Project\Lvl1\Games\Progression\progressGame;
+use function Php\Project\Lvl1\Games\Prime\primeGame;
 
 function engineForGames($game)
 {
@@ -46,6 +47,13 @@ function engineForGames($game)
                     $printTask = true;
                 }
                 $correctAnswer = progressGame(20);
+                break;
+            case "prime":
+                if ($printTask === false) {
+                    line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
+                    $printTask = true;
+                }
+                $correctAnswer = primeGame(100);
                 break;
         }
         $answer = prompt("Your answer");
