@@ -16,7 +16,7 @@ function engineForGames(string $game): bool
     $printTask = false;
     $correctAnswer = null;
     line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?', false, ' ');
+    $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     for ($i = 1; $i <= $questionsCount; $i++) {
         switch ($game) {

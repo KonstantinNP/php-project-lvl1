@@ -14,7 +14,7 @@ function primeGame(int $maxNumber): string
     $allNumbers = array_merge($primeNumbers, $randomNumbers);
     $length = count($allNumbers);
     $question = $allNumbers[rand(0, $length - 1)];
-    $correctAnswer = (in_array($question, $primeNumbers, false)) ? 'yes' : 'no';
+    $correctAnswer = (in_array($question, $primeNumbers, true)) ? 'yes' : 'no';
     line("Question: %s", $question);
     return $correctAnswer;
 }
