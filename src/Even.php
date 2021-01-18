@@ -5,7 +5,7 @@ namespace Php\Project\Lvl1\Even;
 use function cli\line;
 use function cli\prompt;
 
-function checkEven()
+function checkEven(): bool
 {
 
 
@@ -25,8 +25,9 @@ function checkEven()
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
             line("Let's try again, %s!", $name);
-            return;
+            return false;
         }
     }
     line("Congratulations, %s!", $name);
+    return true;
 }

@@ -4,7 +4,7 @@ namespace Php\Project\Lvl1\Games\Gcd;
 
 use function cli\line;
 
-function gcdGame($maxNumber): string
+function gcdGame(int $maxNumber): string
 {
     $firstRandomNumber = rand(1, $maxNumber);
     $secondRandomNumber = rand(1, $maxNumber);

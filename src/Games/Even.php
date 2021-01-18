@@ -4,7 +4,7 @@ namespace Php\Project\Lvl1\Games\Even;
 
 use function cli\line;
 
-function evenGame($maxNumber): string
+function evenGame(int $maxNumber): string
 {
     $question = rand(1, $maxNumber); //генерация случайного числа
     $parity = $question % 2 === 0; // определение четности

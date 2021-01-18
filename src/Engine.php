@@ -10,7 +10,7 @@ use function Php\Project\Lvl1\Games\Gcd\gcdGame;
 use function Php\Project\Lvl1\Games\Progression\progressGame;
 use function Php\Project\Lvl1\Games\Prime\primeGame;
 
-function engineForGames($game)
+function engineForGames(string $game): bool
 {
     $questionsCount = 3;
     $printTask = false;
@@ -62,8 +62,9 @@ function engineForGames($game)
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
             line("Let's try again, %s!", $name);
-            return;
+            return false;
         }
     }
     line("Congratulations, %s!", $name);
+    return true;
 }

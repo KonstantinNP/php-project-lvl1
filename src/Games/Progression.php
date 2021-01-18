@@ -4,8 +4,9 @@ namespace Php\Project\Lvl1\Games\Progression;
 
 use function cli\line;
 
-function progressGame($maxNumber): string
+function progressGame(int $maxNumber): string
 {
+    $progression = [];
     $progression[0] = rand(1, $maxNumber);
     $step = rand(1, 5);
     for ($i = 1; $i < 10; $i++) {

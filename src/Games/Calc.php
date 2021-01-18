@@ -4,7 +4,7 @@ namespace Php\Project\Lvl1\Games\Calc;
 
 use function cli\line;
 
-function calcGame($maxNumber)
+function calcGame(int $maxNumber): string
 {
     $firstRandomNumber = rand(1, $maxNumber);
     $secondRandomNumber = rand(1, $maxNumber);
