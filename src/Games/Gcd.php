@@ -17,6 +17,7 @@ function gcdGame(int $maxNumber): string
         for ($j = floor($minNumber / 2); $j >= 2; $j--) {
             if ($firstRandomNumber % $j === 0 && $secondRandomNumber % $j === 0) {
                 $maxDivisor = $j;
+                break;
             }
         }
     }
