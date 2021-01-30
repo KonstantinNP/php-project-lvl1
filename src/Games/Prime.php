@@ -13,7 +13,7 @@ function primeGame(): void
     line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
     $maxNumber = 100;
     for ($i = 1; $i <= 3; $i++) {
-        $randomNumber = (string) rand(1, $maxNumber);
+        $randomNumber = rand(1, $maxNumber);
         if ($randomNumber % 2 === 0) {
             $correctAnswer = 'no';
         } else {
@@ -26,7 +26,7 @@ function primeGame(): void
             }
         }
         $question = $randomNumber;
-        $result = engineForGames($name, $question, $correctAnswer);
+        $result = engineForGames($name, (string) $question, $correctAnswer);
         if ($result === false) {
             return;
         }
