@@ -1,20 +1,35 @@
 <?php
 
-namespace Php\Project\Lvl1\Games\Prime;
+namespace Project\Games\Prime;
 
 use function cli\line;
+use function Project\Engine\congratulations;
+use function Project\Engine\greeting;
+use function Project\Engine\engineForGames;
 
-function primeGame(int $maxNumber): string
+function primeGame()
 {
-    $primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71];
-    $randomNumbers = [];
-    for ($i = 0; $i < 20; $i++) {
-        $randomNumbers[] = rand(1, $maxNumber);
+    $name = greeting();
+    line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
+    $maxNumber = 100;
+    for ($i = 1; $i <= 3; $i++) {
+        $randomNumber = rand(1, $maxNumber);
+        if ($randomNumber % 2 === 0) {
+            $correctAnswer = 'no';
+        } else {
+            $correctAnswer = 'yes';
+            for ($j = 3; $j < $randomNumber / 2; $j++) {
+                if ($randomNumber % $j === 0) {
+                    $correctAnswer = 'no';
+                    break;
+                }
+            }
+        }
+        $question = $randomNumber;
+        $result = engineForGames($name, $question, $correctAnswer);
+        if ($result === false) {
+            return;
+        }
     }
-    $allNumbers = array_merge($primeNumbers, $randomNumbers);
-    $length = count($allNumbers);
-    $question = $allNumbers[rand(0, $length - 1)];
-    $correctAnswer = (in_array($question, $primeNumbers, true)) ? 'yes' : 'no';
-    line("Question: %s", $question);
-    return $correctAnswer;
+    Congratulations($name);
 }

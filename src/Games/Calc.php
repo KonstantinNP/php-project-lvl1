@@ -1,27 +1,37 @@
 <?php
 
-namespace Php\Project\Lvl1\Games\Calc;
+namespace Project\Games\Calc;
 
 use function cli\line;
+use function Project\Engine\greeting;
+use function Project\Engine\engineForGames;
+use function Project\Engine\congratulations;
 
-function calcGame(int $maxNumber): string
+function calcGame()
 {
-    $firstRandomNumber = rand(1, $maxNumber);
-    $secondRandomNumber = rand(1, $maxNumber);
-    // Создание массива вопросов
-    $questionForSum = "{$firstRandomNumber} + {$secondRandomNumber}";
-    $questionForSubtract = "{$firstRandomNumber} - {$secondRandomNumber}";
-    $questionForMultiplication = "{$firstRandomNumber} * {$secondRandomNumber}";
-    $questions = [$questionForSum, $questionForSubtract, $questionForMultiplication];
-    // Создание массива ответов
-    $resultOfSum = $firstRandomNumber + $secondRandomNumber;
-    $resultOfSubtract = $firstRandomNumber - $secondRandomNumber;
-    $resultOfMultiplication = $firstRandomNumber * $secondRandomNumber;
-    $operations = [$resultOfSum, $resultOfSubtract, $resultOfMultiplication];
-    // Генерация случайной операции и определение соответсвущих ей вопроса и ответа
-    $randomOperation = rand(0, 2);
-    $question = $questions[$randomOperation];
-    $correctAnswer = (string) $operations[$randomOperation];
-    line("Question: %s", $question);
-    return $correctAnswer;
+    $name = greeting();
+    line("What is the result of the expression?");
+    $maxNumber = 10;
+    $question = '';
+    $correctAnswer = '';
+    for ($i = 1; $i <= 3; $i++) {
+        $firstRandomNumber = rand(1, $maxNumber);
+        $secondRandomNumber = rand(1, $maxNumber);
+        $randomOperation = rand(0, 2); // 0 - сложение; 1 - вычитание; 2 - умножение
+        if ($randomOperation === 0) {
+            $question = "{$firstRandomNumber} + {$secondRandomNumber}";
+            $correctAnswer = $firstRandomNumber + $secondRandomNumber;
+        } elseif ($randomOperation === 1) {
+            $question = "{$firstRandomNumber} - {$secondRandomNumber}";
+            $correctAnswer = $firstRandomNumber - $secondRandomNumber;
+        } elseif ($randomOperation === 2) {
+            $question = "{$firstRandomNumber} * {$secondRandomNumber}";
+            $correctAnswer = $firstRandomNumber * $secondRandomNumber;
+        }
+        $result = engineForGames($name, $question, (string) $correctAnswer);
+        if ($result === false) {
+            return;
+        }
+    }
+    Congratulations($name);
 }

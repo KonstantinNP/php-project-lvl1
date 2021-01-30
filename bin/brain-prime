@@ -4,7 +4,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function Php\Project\Lvl1\Engine\engineForGames;
+use function Project\Games\Prime\primeGame;
 
-engineForGames('prime');
+primeGame();
 
