@@ -14,11 +14,11 @@ function primeGame(): void
     $maxNumber = 100;
     for ($i = 1; $i <= 3; $i++) {
         $randomNumber = rand(1, $maxNumber);
-        if ($randomNumber % 2 === 0) {
+        if ($randomNumber === 1) {
             $correctAnswer = 'no';
         } else {
             $correctAnswer = 'yes';
-            for ($j = 3; $j < $randomNumber / 2; $j++) {
+            for ($j = 2; $j <= floor($randomNumber / 2); $j++) {
                 if ($randomNumber % $j === 0) {
                     $correctAnswer = 'no';
                     break;
