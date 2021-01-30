@@ -7,13 +7,13 @@ use function Project\Engine\congratulations;
 use function Project\Engine\greeting;
 use function Project\Engine\engineForGames;
 
-function primeGame()
+function primeGame(): void
 {
     $name = greeting();
     line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
     $maxNumber = 100;
     for ($i = 1; $i <= 3; $i++) {
-        $randomNumber = rand(1, $maxNumber);
+        $randomNumber = (string) rand(1, $maxNumber);
         if ($randomNumber % 2 === 0) {
             $correctAnswer = 'no';
         } else {

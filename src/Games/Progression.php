@@ -7,7 +7,7 @@ use function Project\Engine\congratulations;
 use function Project\Engine\greeting;
 use function Project\Engine\engineForGames;
 
-function progressGame()
+function progressGame(): void
 {
     $name = greeting();
     line("What number is missing in the progression?");

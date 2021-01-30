@@ -27,7 +27,7 @@ function engineForGames(string $name, string $question, string $correctAnswer): 
     return true;
 }
 
-function congratulations($name)
+function congratulations(string $name): void
 {
     line("Congratulations, %s!", $name);
 }

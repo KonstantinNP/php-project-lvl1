@@ -7,7 +7,7 @@ use function Project\Engine\greeting;
 use function Project\Engine\engineForGames;
 use function Project\Engine\congratulations;
 
-function calcGame()
+function calcGame(): void
 {
     $name = greeting();
     line("What is the result of the expression?");

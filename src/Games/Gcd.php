@@ -7,7 +7,7 @@ use function Project\Engine\congratulations;
 use function Project\Engine\greeting;
 use function Project\Engine\engineForGames;
 
-function gcdGame()
+function gcdGame(): void
 {
     $name = greeting();
     line("Find the greatest common divisor of given numbers");
