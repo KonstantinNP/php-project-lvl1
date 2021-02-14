@@ -4,7 +4,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function Project\Games\Progression\progressGame;
+use function Project\Games\Progression\runProgressGame;
 
-progressGame();
+runProgressGame();
 

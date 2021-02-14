@@ -4,6 +4,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function Project\Games\Even\evenGame;
+use function Project\Games\Even\runEvenGame;
 
-evenGame();
+runEvenGame();

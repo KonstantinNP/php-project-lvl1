@@ -2,34 +2,33 @@
 
 namespace Project\Games\Prime;
 
-use function cli\line;
-use function Project\Engine\congratulations;
-use function Project\Engine\greeting;
 use function Project\Engine\engineForGames;
 
-function primeGame(): void
+function runPrimeGame(): void
 {
-    $name = greeting();
-    line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
-    $maxNumber = 100;
-    for ($i = 1; $i <= 3; $i++) {
-        $randomNumber = rand(1, $maxNumber);
-        if ($randomNumber === 1) {
-            $correctAnswer = 'no';
-        } else {
-            $correctAnswer = 'yes';
-            for ($j = 2; $j <= floor($randomNumber / 2); $j++) {
-                if ($randomNumber % $j === 0) {
-                    $correctAnswer = 'no';
-                    break;
-                }
-            }
-        }
-        $question = $randomNumber;
-        $result = engineForGames($name, (string) $question, $correctAnswer);
-        if ($result === false) {
-            return;
+    $conditionOfTask = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+    $nameOfGameFunction = '\Project\Games\Prime\getValuesForPrimeGame';
+    engineForGames($conditionOfTask, $nameOfGameFunction);
+}
+
+function isPrime(int $randomNumber): bool
+{
+    if ($randomNumber < 2) {
+        return false;
+    }
+    for ($i = 2; $i <= $randomNumber / 2; $i++) {
+        if ($randomNumber % $i === 0) {
+            return false;
         }
     }
-    Congratulations($name);
+    return true;
+}
+
+function getValuesForPrimeGame(): array
+{
+    $maxNumber = 100;
+    $randomNumber = rand(1, $maxNumber);
+    $question = $randomNumber;
+    $correctAnswer = (isPrime($randomNumber)) ? 'yes' : 'no';
+    return [(string)$question, $correctAnswer];
 }
