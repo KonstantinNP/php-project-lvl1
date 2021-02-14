@@ -4,13 +4,6 @@ namespace Project\Games\Progression;
 
 use function Project\Engine\engineForGames;
 
-function runProgressGame(): void
-{
-    $conditionOfTask = "What number is missing in the progression?";
-    $nameOfGameFunction = '\Project\Games\Progression\getValuesForProgressGame';
-    engineForGames($conditionOfTask, $nameOfGameFunction);
-}
-
 function getProgression(): array
 {
     $progression = [];
@@ -22,12 +15,16 @@ function getProgression(): array
     return $progression;
 }
 
-function getValuesForProgressGame(): array
+function runProgressGame(): void
 {
-    $progression = getProgression();
-    $indexMissedNumber = rand(1, 9);
-    $correctAnswer = $progression[$indexMissedNumber];
-    $progression[$indexMissedNumber] = '..';
-    $question = implode(" ", $progression);
-    return [$question, (string) $correctAnswer];
+    $conditionOfTask = "What number is missing in the progression?";
+    $getValuesForProgressGame = function (): array {
+        $progression = getProgression();
+        $indexMissedNumber = rand(1, 9);
+        $correctAnswer = $progression[$indexMissedNumber];
+        $progression[$indexMissedNumber] = '..';
+        $question = implode(" ", $progression);
+        return [$question, (string) $correctAnswer];
+    };
+    engineForGames($conditionOfTask, $getValuesForProgressGame);
 }

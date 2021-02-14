@@ -4,13 +4,6 @@ namespace Project\Games\Prime;
 
 use function Project\Engine\engineForGames;
 
-function runPrimeGame(): void
-{
-    $conditionOfTask = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
-    $nameOfGameFunction = '\Project\Games\Prime\getValuesForPrimeGame';
-    engineForGames($conditionOfTask, $nameOfGameFunction);
-}
-
 function isPrime(int $randomNumber): bool
 {
     if ($randomNumber < 2) {
@@ -24,11 +17,15 @@ function isPrime(int $randomNumber): bool
     return true;
 }
 
-function getValuesForPrimeGame(): array
+function runPrimeGame(): void
 {
-    $maxNumber = 100;
-    $randomNumber = rand(1, $maxNumber);
-    $question = $randomNumber;
-    $correctAnswer = (isPrime($randomNumber)) ? 'yes' : 'no';
-    return [(string)$question, $correctAnswer];
+    $conditionOfTask = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+    $getValuesForPrimeGame = function (): array {
+        $maxNumber = 100;
+        $randomNumber = rand(1, $maxNumber);
+        $question = $randomNumber;
+        $correctAnswer = (isPrime($randomNumber)) ? 'yes' : 'no';
+        return [(string)$question, $correctAnswer];
+    };
+    engineForGames($conditionOfTask, $getValuesForPrimeGame);
 }
