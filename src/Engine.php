@@ -5,7 +5,7 @@ namespace Project\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function engineForGames(string $conditionOfTask, $nameOfGameFunction): void
+function engineForGames(string $conditionOfTask, callable $nameOfGameFunction): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?', '', ' ');
