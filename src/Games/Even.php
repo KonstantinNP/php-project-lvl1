@@ -4,15 +4,20 @@ namespace Project\Games\Even;
 
 use function Project\Engine\engineForGames;
 
-function runEvenGame(): void
+const CONDITION_OF_TASK = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+const MAX_NUMBER = 100;
+
+function isEven(int $number): bool
 {
-    $conditionOfTask = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
-    $getValuesForEvenGame = function (): array {
-        $maxNumber = 100;
-        $question = rand(1, $maxNumber); //генерация случайного числа
-        $isEven = $question % 2 === 0; // определение четности
-        $correctAnswer = ($isEven) ? 'yes' : 'no';
-        return [(string) $question, $correctAnswer];
+    return $number % 2 === 0;
+}
+
+function runGame(): void
+{
+    $getValuesForGame = function (): array {
+        $number = rand(1, MAX_NUMBER);
+        $correctAnswer = isEven($number) ? 'yes' : 'no';
+        return [(string) $number, $correctAnswer];
     };
-    engineForGames($conditionOfTask, $getValuesForEvenGame);
+    engineForGames(CONDITION_OF_TASK, $getValuesForGame);
 }

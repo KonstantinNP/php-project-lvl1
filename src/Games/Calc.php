@@ -4,27 +4,38 @@ namespace Project\Games\Calc;
 
 use function Project\Engine\engineForGames;
 
-function runCalcGame(): void
+const CONDITION_OF_TASK = "What is the result of the expression?";
+const MAX_NUMBER = 10;
+
+function getCalcOperation(int $firstNumber, int $secondNumber): array
 {
-    $conditionOfTask = 'What is the result of the expression?';
-    $getValuesForCalcGame = function (): array {
-        $maxNumber = 10;
-        $question = '';
-        $correctAnswer = '';
-        $firstRandomNumber = rand(1, $maxNumber);
-        $secondRandomNumber = rand(1, $maxNumber);
-        $randomOperation = rand(0, 2); // 0 - сложение; 1 - вычитание; 2 - умножение
-        if ($randomOperation === 0) {
-            $question = "{$firstRandomNumber} + {$secondRandomNumber}";
-            $correctAnswer = $firstRandomNumber + $secondRandomNumber;
-        } elseif ($randomOperation === 1) {
-            $question = "{$firstRandomNumber} - {$secondRandomNumber}";
-            $correctAnswer = $firstRandomNumber - $secondRandomNumber;
-        } elseif ($randomOperation === 2) {
-            $question = "{$firstRandomNumber} * {$secondRandomNumber}";
-            $correctAnswer = $firstRandomNumber * $secondRandomNumber;
-        }
+    $correctAnswer = '';
+    $operations = ['+', '-', '*'];
+    $operator = $operations[array_rand($operations)];
+    switch ($operator) {
+        case "+":
+            $correctAnswer = $firstNumber + $secondNumber;
+            break;
+        case "-":
+            $correctAnswer = $firstNumber - $secondNumber;
+            break;
+        case "*":
+            $correctAnswer = $firstNumber * $secondNumber;
+            break;
+        default:
+            print_r("Unknown operation symbol {$operator}");
+    }
+    return [$operator, $correctAnswer];
+}
+
+function runGame(): void
+{
+    $getValuesForGame = function (): array {
+        $firstNumber = rand(1, MAX_NUMBER);
+        $secondNumber = rand(1, MAX_NUMBER);
+        [$operator, $correctAnswer] = getCalcOperation($firstNumber, $secondNumber);
+        $question = "{$firstNumber} {$operator} {$secondNumber}";
         return [$question, (string)$correctAnswer];
     };
-    engineForGames($conditionOfTask, $getValuesForCalcGame);
+    engineForGames(CONDITION_OF_TASK, $getValuesForGame);
 }

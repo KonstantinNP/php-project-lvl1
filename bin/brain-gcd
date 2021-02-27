@@ -1,9 +1,9 @@
 #!/usr/bin/env php
-
 <?php
+
+use function Project\Games\Gcd\runGame;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function Project\Games\Gcd\runGcdGame;
 
-runGcdGame();
+runGame();

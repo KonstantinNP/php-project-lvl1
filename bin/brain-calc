@@ -1,9 +1,8 @@
 #!/usr/bin/env php
-
 <?php
+
+use function Project\Games\Calc\runGame;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function Project\Games\Calc\runCalcGame;
-
-runCalcGame();
+runGame();

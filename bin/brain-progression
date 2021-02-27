@@ -1,10 +1,9 @@
 #!/usr/bin/env php
-
 <?php
+
+use function Project\Games\Progression\runGame;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function Project\Games\Progression\runProgressGame;
-
-runProgressGame();
+runGame();
 
