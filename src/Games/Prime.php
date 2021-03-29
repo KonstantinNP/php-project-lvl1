@@ -2,9 +2,9 @@
 
 namespace Project\Games\Prime;
 
-use function Project\Engine\engineForGames;
+use function Project\Engine\implementUserInterface;
 
-const CONDITION_OF_TASK = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+const GAME_TASK = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
 const MAX_NUMBER = 100;
 
 function isPrime(int $number): bool
@@ -22,11 +22,11 @@ function isPrime(int $number): bool
 
 function runGame(): void
 {
-    $getValuesForGame = function (): array {
+    $getQuestionAnswerPair = function (): array {
         $number = rand(1, MAX_NUMBER);
         $question = $number;
         $correctAnswer = isPrime($number) ? 'yes' : 'no';
-        return [(string)$question, $correctAnswer];
+        return [(string) $question, $correctAnswer];
     };
-    engineForGames(CONDITION_OF_TASK, $getValuesForGame);
+    implementUserInterface(GAME_TASK, $getQuestionAnswerPair);
 }

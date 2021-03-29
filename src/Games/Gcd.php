@@ -2,9 +2,9 @@
 
 namespace Project\Games\Gcd;
 
-use function Project\Engine\engineForGames;
+use function Project\Engine\implementUserInterface;
 
-const CONDITION_OF_TASK = "Find the greatest common divisor of given numbers";
+const GAME_TASK = "Find the greatest common divisor of given numbers";
 const MAX_NUMBER = 100;
 
 function getGreatestDivisor(int $a, int $b): int
@@ -19,12 +19,12 @@ function getGreatestDivisor(int $a, int $b): int
 
 function runGame(): void
 {
-    $getValuesForGame = function (): array {
+    $getQuestionAnswerPair = function (): array {
         $firstNumber = rand(1, MAX_NUMBER);
         $secondNumber = rand(1, MAX_NUMBER);
         $question = "{$firstNumber} {$secondNumber}";
         $correctAnswer = getGreatestDivisor($firstNumber, $secondNumber);
         return [$question, (string) $correctAnswer];
     };
-    engineForGames(CONDITION_OF_TASK, $getValuesForGame);
+    implementUserInterface(GAME_TASK, $getQuestionAnswerPair);
 }

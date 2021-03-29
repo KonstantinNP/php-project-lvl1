@@ -2,12 +2,12 @@
 
 namespace Project\Games\Calc;
 
-use function Project\Engine\engineForGames;
+use function Project\Engine\implementUserInterface;
 
-const CONDITION_OF_TASK = "What is the result of the expression?";
+const GAME_TASK = "What is the result of the expression?";
 const MAX_NUMBER = 10;
 
-function getCalcOperation(int $firstNumber, int $secondNumber): array
+function getCalcResult(int $firstNumber, int $secondNumber): array
 {
     $correctAnswer = '';
     $operations = ['+', '-', '*'];
@@ -30,12 +30,12 @@ function getCalcOperation(int $firstNumber, int $secondNumber): array
 
 function runGame(): void
 {
-    $getValuesForGame = function (): array {
+    $getQuestionAnswerPair = function (): array {
         $firstNumber = rand(1, MAX_NUMBER);
         $secondNumber = rand(1, MAX_NUMBER);
-        [$operator, $correctAnswer] = getCalcOperation($firstNumber, $secondNumber);
+        [$operator, $correctAnswer] = getCalcResult($firstNumber, $secondNumber);
         $question = "{$firstNumber} {$operator} {$secondNumber}";
-        return [$question, (string)$correctAnswer];
+        return [$question, (string) $correctAnswer];
     };
-    engineForGames(CONDITION_OF_TASK, $getValuesForGame);
+    implementUserInterface(GAME_TASK, $getQuestionAnswerPair);
 }

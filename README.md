@@ -13,10 +13,9 @@
 [![asciicast](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa.svg)](https://asciinema.org/a/BGXvUeJw9iyGo3upy9mH2bIBa)
 
 ### Calc-Game
-[![asciicast](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy.svg)](https://asciinema.org/a/61cfZGWFfwceNMIRPxkoyIAjy)
-
+[![asciicast](https://asciinema.org/a/3QMW210f8rBvKJMZj2UfGY8rW.svg)](https://asciinema.org/a/3QMW210f8rBvKJMZj2UfGY8rW)
 ### Gcd-Game
-[![asciicast](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG.svg)](https://asciinema.org/a/i09OVcE5cUUQ8Jei5cIhH64GG)
+[![asciicast](https://asciinema.org/a/H4wxhJSr0MZxJ3HhSytrPVI2z.svg)](https://asciinema.org/a/H4wxhJSr0MZxJ3HhSytrPVI2z)
 
 ### Progression-Game
 [![asciicast](https://asciinema.org/a/dtD4eVD3r3tjwpiofBaQyGTxd.svg)](https://asciinema.org/a/dtD4eVD3r3tjwpiofBaQyGTxd)

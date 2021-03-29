@@ -5,5 +5,4 @@ use function Project\Games\Gcd\runGame;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-
 runGame();

@@ -6,4 +6,3 @@ use function Project\Games\Progression\runGame;
 require __DIR__ . '/../vendor/autoload.php';
 
 runGame();
-
