@@ -7,12 +7,12 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function implementUserInterface(string $conditionOfTask, callable $getQuestionAnswerPair): void
+function play(string $gameTask, callable $getQuestionAnswerPair): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?', '', ' ');
     line("Hello, %s!", $name);
-    line("%s", $conditionOfTask);
+    line("%s", $gameTask);
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         [$question, $correctAnswer] = $getQuestionAnswerPair();
         line("Question: %s", $question);
