@@ -21,7 +21,7 @@ function getQuestionAnswerPair(): array
 {
     $firstNumber = rand(1, MAX_NUMBER);
     $secondNumber = rand(1, MAX_NUMBER);
-    $question = "{$firstNumber} {$secondNumber}";
+    $question = "$firstNumber $secondNumber";
     $correctAnswer = getGreatestDivisor($firstNumber, $secondNumber);
     return [$question, (string) $correctAnswer];
 }
